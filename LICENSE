@@ -1,0 +1,30 @@
+Proprietary License — AIML VS Code Extension
+
+Copyright (c) 2026 Eagle Pay. All rights reserved.
+
+This software and its source code are the proprietary property of Eagle Pay
+("Licensor"). Permission is hereby granted to authorized end users to:
+
+  1. Install and use the extension on workstations running Visual Studio Code
+     (or compatible forks), subject to a valid AIML platform subscription.
+  2. Connect the extension to AIML accounts owned or licensed to the end user.
+
+The following are NOT permitted without prior written consent from Eagle Pay:
+
+  - Modification, decompilation, reverse engineering, or disassembly of the
+    extension, except to the extent expressly permitted by applicable law.
+  - Redistribution of the extension or any derivative work, in source or
+    binary form.
+  - Use of the extension in connection with any service that competes with
+    AIML, or to extract data for the purpose of building a competing system.
+  - Removal or alteration of any proprietary notices contained in the
+    extension.
+
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM,
+OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+Contact: legal@eagle-pay.com

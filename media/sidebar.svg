@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+  <!--
+    Full "AIML" monogram, drawn as path glyphs so it renders identically
+    across themes and DPIs without depending on system fonts. All paths
+    use currentColor so VS Code can tint for light / dark / high-contrast.
+    Letters use a bold condensed style, kerned tight to fit 24×24.
+  -->
+
+  <!-- A : 2..7 -->
+  <path d="M2 18.5 4 6.5 6 6.5 8 18.5 6.3 18.5 6 16.4 4 16.4 3.7 18.5 Z M4.3 14.6 5.7 14.6 5 9.6 Z"/>
+
+  <!-- I : 8.5..10.5 -->
+  <path d="M8.6 6.5 10.4 6.5 10.4 18.5 8.6 18.5 Z"/>
+
+  <!-- M : 11.2..16.4 -->
+  <path d="M11.2 18.5 11.2 6.5 12.9 6.5 13.8 13.4 14.7 6.5 16.4 6.5 16.4 18.5 14.9 18.5 14.9 10.5 13.8 18.5 13.7 18.5 12.7 10.5 12.7 18.5 Z"/>
+
+  <!-- L : 17.4..22 -->
+  <path d="M17.4 6.5 19.2 6.5 19.2 16.9 22 16.9 22 18.5 17.4 18.5 Z"/>
+</svg>

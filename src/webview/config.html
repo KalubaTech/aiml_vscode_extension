@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none';
+                 style-src {{cspSource}} 'unsafe-inline';
+                 script-src 'nonce-{{nonce}}';
+                 img-src {{cspSource}} https: data:;
+                 connect-src https:;" />
+  <link rel="stylesheet" href="{{stylesUri}}" />
+  <title>AIML — Configure</title>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <img class="logo" src="{{logoUri}}" alt="AIML" />
+      <div>
+        <h1>Configure AIML</h1>
+        <p class="sub">Connect this editor to your AIML workspace. Settings are stored in VS Code only.</p>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="row">
+        <label for="endpoint">Endpoint</label>
+        <input id="endpoint" type="url" autocomplete="off" placeholder="https://dev-finance.eagle-pay.com/aiml" />
+        <p class="hint">Base URL of your AIML platform — no trailing <code>/v1</code>.</p>
+      </div>
+
+      <div class="row">
+        <label for="apiKey">API key
+          <a href="#" class="inline-link" id="open-keys">Dashboard → Developers</a>
+        </label>
+        <div class="input-group">
+          <input id="apiKey" type="password" autocomplete="off" placeholder="aiml_xxxxxxxx_xxxxxxxxxxxxxxxxxxxxxx" />
+          <button class="btn-ghost btn-icon" id="reveal" title="Show / hide">👁</button>
+        </div>
+        <p class="hint">Bearer key issued to your organization. Stored as a machine-scope setting.</p>
+      </div>
+
+      <div class="row">
+        <label for="projectId">Project ID
+          <a href="#" class="inline-link" id="open-projects">Dashboard → Projects</a>
+        </label>
+        <input id="projectId" autocomplete="off" placeholder="cmp7…" />
+        <p class="hint">Click the <em>Project ID</em> column on your projects table to copy. The agent uses this project's rules, memory, and training documents.</p>
+        <select id="projectPicker" class="picker" style="display:none;">
+          <option value="">— pick a discovered project —</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="defaultModel">Default model (optional)</label>
+        <select id="defaultModel">
+          <option value="">Use project default</option>
+          <option value="claude-opus-4-7">claude-opus-4-7 — most capable</option>
+          <option value="claude-sonnet-4-6">claude-sonnet-4-6 — balanced</option>
+          <option value="claude-haiku-4-5-20251001">claude-haiku-4-5 — fastest</option>
+        </select>
+        <p class="hint">Overrides the project's <code>defaultModel</code> for this editor only.</p>
+      </div>
+
+      <div class="actions">
+        <button class="btn-primary" id="save">Save</button>
+        <button class="btn-secondary" id="test">Test connection</button>
+        <button class="btn-ghost" id="get-started">No account? Sign up →</button>
+      </div>
+
+      <div id="status"></div>
+    </section>
+
+    <footer>
+      <p>
+        <strong>Security:</strong> the API key is stored in VS Code's
+        machine-scope settings. It is not synced across machines and never
+        leaves your environment except to call your configured endpoint.
+      </p>
+    </footer>
+  </div>
+
+  <script nonce="{{nonce}}" src="{{scriptUri}}"></script>
+</body>
+</html>

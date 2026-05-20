@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none';
+                 style-src {{cspSource}} 'unsafe-inline';
+                 script-src 'nonce-{{nonce}}';
+                 img-src {{cspSource}} https: data:;" />
+  <link rel="stylesheet" href="{{stylesUri}}" />
+  <title>AIML</title>
+</head>
+<body>
+  <!-- Session header (Claude-Code style) -->
+  <div id="session-header" class="session-header">
+    <div class="session-title" id="session-title" title="Click to rename">New conversation</div>
+    <div class="session-actions">
+      <button type="button" class="icon-btn" id="btn-history" title="Session history">⌚</button>
+      <button type="button" class="icon-btn" id="btn-new-session" title="New session">＋</button>
+    </div>
+  </div>
+
+  <!-- Session-history popover -->
+  <div id="sessions-popover" class="popover popover-sessions" hidden>
+    <div class="popover-section-label">Recent sessions</div>
+    <div id="sessions-list" class="popover-results">
+      <div class="popover-empty">Loading…</div>
+    </div>
+  </div>
+
+  <div id="warnings"></div>
+  <div id="messages"></div>
+  <div id="progress" class="progress" hidden></div>
+  <div id="status"></div>
+
+  <form id="composer" autocomplete="off">
+    <!-- Attachment chips (above textarea) -->
+    <div id="chips" class="chips"></div>
+
+    <!-- Composer textarea -->
+    <div id="input-wrap" class="input-wrap">
+      <svg class="snake-border" preserveAspectRatio="none" aria-hidden="true">
+        <rect class="snake-rect" x="1" y="1" rx="6" ry="6"
+              pathLength="100" vector-effect="non-scaling-stroke"></rect>
+      </svg>
+      <textarea id="input" rows="2" placeholder="Ask AIML — Enter to send · Shift+Enter for newline" autofocus></textarea>
+    </div>
+
+    <!-- Footer row -->
+    <div class="composer-footer">
+      <div class="composer-actions-left">
+        <button type="button" class="icon-btn"            id="btn-add"        title="Attach context">＋</button>
+        <button type="button" class="pill data-essential" id="btn-model"      title="Switch model"></button>
+        <button type="button" class="pill"                id="btn-profile"    title="Switch profile"></button>
+      </div>
+      <div class="composer-actions-right">
+        <button type="button" class="icon-btn"            id="btn-save"       title="Save conversation">⤓</button>
+        <button type="button" class="icon-btn"            id="btn-reset"      title="Reset conversation">⟳</button>
+        <button type="button" class="icon-btn"            id="btn-configure"  title="Configure">⚙</button>
+        <button type="button" class="icon-btn"            id="btn-overflow"   title="More">⋯</button>
+        <button type="submit" class="send-btn"            id="send">↑</button>
+      </div>
+    </div>
+
+    <!-- Inline attach popover (workspace browser + upload) -->
+    <div id="attach-popover" class="popover" hidden>
+      <button type="button" class="popover-item" id="att-upload">
+        <span class="popover-icon">⬆</span>
+        <div>
+          <div class="popover-title">Upload from computer</div>
+          <div class="popover-sub">Pick any file from your disk. Contents inlined into the message.</div>
+        </div>
+      </button>
+      <div class="popover-divider"></div>
+      <div class="popover-section-label">Add context</div>
+      <div class="popover-search">
+        <input type="text" id="att-search" placeholder="Filter workspace files…" />
+      </div>
+      <div id="att-results" class="popover-results">
+        <div class="popover-empty">Loading workspace files…</div>
+      </div>
+    </div>
+
+    <!-- Overflow popover (collapsed actions appear here on narrow widths) -->
+    <div id="overflow-popover" class="popover popover-overflow" hidden>
+      <button type="button" class="popover-item" data-act="save">    <span class="popover-icon">⤓</span> Save conversation</button>
+      <button type="button" class="popover-item" data-act="reset">   <span class="popover-icon">⟳</span> Reset conversation</button>
+      <button type="button" class="popover-item" data-act="profile"> <span class="popover-icon">👤</span> Switch profile</button>
+      <button type="button" class="popover-item" data-act="configure"><span class="popover-icon">⚙</span> Configure</button>
+    </div>
+  </form>
+
+  <script nonce="{{nonce}}" src="{{scriptUri}}"></script>
+</body>
+</html>
