@@ -2,7 +2,7 @@
   "name": "aiml-vscode",
   "displayName": "AIML by EaglePay",
   "description": "AI-native development environment powered by the AIML orchestration platform — persistent project intelligence, multi-file refactoring, autonomous engineering agents.",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "publisher": "eagle-pay",
   "license": "SEE LICENSE IN LICENSE",
   "engines": {

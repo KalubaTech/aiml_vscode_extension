@@ -2,6 +2,18 @@
 
 All notable changes to the AIML VS Code extension are documented here.
 
+## 0.2.6 — 2026-05-20
+
+### Fixes
+
+- **Session history popover now actually appears.** The history clock
+  icon ⌚ was wired correctly but the popover element was inheriting
+  `bottom: calc(100% - 2px)` and `left: 12px` from the shared `.popover`
+  base class, which combined with its own `top: 42px` collapsed it to
+  a zero/negative height — so clicking the button looked like a no-op.
+  The override now resets `left` and `bottom` and bumps `z-index` to
+  match the other popovers, so previous sessions show as expected.
+
 ## 0.2.5 — 2026-05-17
 
 ### Changes
